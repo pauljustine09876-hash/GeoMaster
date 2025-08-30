@@ -403,7 +403,7 @@ svg {
 /* Positioning the character GIF to the left of the map */
 #character-container {
     position: absolute;
-    top: 20%;           /* Align the character vertically at the center */
+    top: 30%;           /* Align the character vertically at the center */
     left: -200px;         /* Move the character to the left of the map */
     transform: translateY(-50%); /* Center the character vertically */
     z-index: 1000;      /* Ensure the GIF stays on top */
@@ -411,7 +411,7 @@ svg {
 
 /* Style for the character GIF */
 #character-gif {
-    width: 250px;       /* Adjust the size of the GIF */
+    width: 200px;       /* Adjust the size of the GIF */
     height: auto;       /* Maintain aspect ratio */
     object-fit: contain;/* Ensure the image doesn't stretch */
 }
@@ -419,15 +419,15 @@ svg {
 /* Positioning the character GIF to the left of the map */
 #character-container1 {
     position: absolute;
-    top: 30%;           /* Align the character vertically at the center */
-    right: -580px;         /* Move the character to the left of the map */
+    top: 40%;           /* Align the character vertically at the center */
+    right: -450px;         /* Move the character to the left of the map */
     transform: translateY(-50%); /* Center the character vertically */
     z-index: 1000;      /* Ensure the GIF stays on top */
 }
 
 /* Style for the character GIF */
 #character-gif1 {
-    width: 800px;       /* Adjust the size of the GIF */
+    width: 700px;       /* Adjust the size of the GIF */
     height: auto;       /* Maintain aspect ratio */
     object-fit: contain;/* Ensure the image doesn't stretch */
 }
@@ -435,8 +435,8 @@ svg {
 /* Positioning the character GIF to the left of the map */
 #character-container2 {
     position: absolute;
-    top: 1.5%;           /* Align the character vertically at the center */
-    right: -250px;         /* Move the character to the left of the map */
+    top: 13.7%;           /* Align the character vertically at the center */
+    right: -180px;         /* Move the character to the left of the map */
     transform: translateY(-50%); /* Center the character vertically */
     z-index: 1000;      /* Ensure the GIF stays on top */
 }
