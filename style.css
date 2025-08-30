@@ -1,0 +1,449 @@
+/* General Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #d5e0ff;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; /* leave space for logos */
+}
+
+/* Title */
+h1{
+  font-family: 'Poppins', sans-serif;  /* Apply the Roboto font to both text and icon */
+  font-size: 2.4em;                     /* Adjust the font size */
+  font-weight: 700;  
+  color: #2f1c6b;                     /* Set the font color */
+  margin-bottom: 20px;                /* Add space below the heading */
+}
+
+/* SVG Map */
+svg path {
+  fill: #8d85ff;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+}
+
+svg path:hover {
+  fill: #5125d2;
+}
+
+/* Tooltip */
+.toggle {
+  position: absolute;  /* Position the tooltip relative to the document */
+  background: #2f1c6b;
+  color: #fff;
+  padding: 4px 15px;
+  border-radius: 4px;
+  letter-spacing: .05em;
+  font-size: 12px;
+  display: none;  /* Initially hidden */
+  pointer-events: none;  /* Ensure the tooltip doesn't block interaction */
+  z-index: 1000;  /* Make sure it appears on top of other elements */
+  transform: translateX(0) translateY(0);  /* Optional: Ensures the tooltip is displayed smoothly */
+}
+
+/* Top Corner Logos */
+.corner {
+  position: absolute;
+  top: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100px;   /* bigger box size when closed */
+  height: 100px;  /* bigger box size when closed */
+  overflow: hidden;
+  text-align: center;
+  z-index: 1000;
+
+  /* RGB glow animation */
+  animation: glow 3s infinite alternate;
+}
+
+/* Left & Right positioning */
+.corner.left {
+  left: 20px;
+}
+
+.corner.right {
+  right: 20px;
+}
+
+/* Logo inside the box */
+.corner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Expanded box (when clicked) */
+.corner.expanded {
+  width: 280px;   /* slightly bigger when expanded */
+  height: auto;
+  padding: 18px;
+}
+
+/* Title inside expanded box */
+.corner h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #2f1c6b;
+}
+
+/* Description text */
+.corner p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Link button */
+.corner a {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  background: #2f1c6b;
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.corner a:hover {
+  background: #5125d2;
+}
+
+/* Link button */
+.corner b {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  background: #2f1c6b;
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.corner b:hover {
+  background: #5125d2;
+}
+
+/* RGB glowing animation */
+@keyframes glow {
+  0%   { box-shadow: 0 0 12px rgba(255, 0, 0, 0.6); }
+  25%  { box-shadow: 0 0 16px rgba(0, 255, 0, 0.6); }
+  50%  { box-shadow: 0 0 20px rgba(0, 0, 255, 0.6); }
+  75%  { box-shadow: 0 0 16px rgba(255, 255, 0, 0.6); }
+  100% { box-shadow: 0 0 12px rgba(255, 0, 255, 0.6); }
+}
+
+
+/* Flags & Organizations Section */
+section {
+  margin: 40px 0;
+  text-align: center;
+  width: 100%;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  color: #2f1c6b;
+}
+
+.flags, .orgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 150px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.card p {
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+
+/* Info Cards Section */
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.info-cards .card {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Stronger shadow */ /* Apply shadow to card by default */
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;  /* Smooth transition for shadow if needed */
+}
+
+.info-cards .card:hover {
+  /* No hover effect here, shadow stays as it is */
+ box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Stronger shadow */ /* Keep the same shadow when hovered */
+}
+
+.info-cards .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.info-cards h3 {
+  font-size: 1.2em;
+  color: #2f1c6b;
+  margin-bottom: 10px;
+}
+
+.info-cards p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+/* Available Countries Section */
+.available-countries {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.available-countries h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #2f1c6b;
+}
+
+.country-badges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.country-badges .badge {
+  background: #f3f4f6;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.coming-soon {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #777;
+}
+
+
+/* Title Section */
+header {
+    padding-top: 25px; /* prevents overlap with logos */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.6em;
+    font-weight: 700;
+    color: #1664a6;
+    margin: 0 0 15px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 0 auto 30px;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+/* Europe subsection inside header */
+header .europe {
+    padding: 25px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header .europe h2 {
+    font-size: 2em;
+    color: #1664a6;
+    margin-bottom: 10px;
+}
+
+header .europe p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+/* Tags container */
+.info-tags {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+/* Individual tag styling */
+.info-tags .tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #f0f4f8;
+    color: #1664a6;
+    font-weight: 600;
+    border: 1px solid #cfd8dc;
+    cursor: default; /* makes it clear they're not clickable */
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-tags .tag i {
+    font-size: 1.2em; /* icon size */
+}
+
+
+#map-container {
+    position: relative; /* This allows absolute positioning of the zoom controls */
+}
+
+#zoom-controls {
+    position: absolute; /* Absolute position within the map container */
+    bottom: 100px;       /* 20px from the bottom of the map container */
+    right: -80px;        /* 20px from the right side of the map container */
+    z-index: 1000;      /* Ensure the buttons are on top */
+    display: flex;      /* Arrange buttons vertically */
+    flex-direction: column; /* Stack the buttons vertically */
+    gap: 10px;          /* Add space between the buttons */
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;     /* Bigger font size for the + and - buttons */
+    cursor: pointer;    /* Make the button clickable */
+    background-color: #2f1c6b; /* Button background */
+    color: white;        /* Text color */
+    border: none;        /* Remove default border */
+    border-radius: 5px;  /* Rounded corners */
+}
+
+button:hover {
+    background-color: #5125d2; /* Change background color on hover */
+}
+
+/* Smooth Transition for Zooming */
+svg {
+    transition: viewBox 0.3s ease-in-out; /* Smooth zoom transition */
+}
+
+/* Reset Button Styling */
+#reset-btn {
+    padding: 10px;
+    background-color: #2f1c6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Positioning */
+    position: absolute; /* Absolute positioning within its container */
+    bottom: 200px;             /* Adjust this value to move the button up or down */
+    right: -95px;            /* Adjust this value to move the button left or right */
+    z-index: 1001;      /* Ensures it stays on top of other elements */
+}
+
+/* Reset Button Icon Styling */
+#reset-btn svg {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Reset Button Hover Effect */
+#reset-btn:hover {
+    background-color: #5125d2;  
+}
+
+/* Positioning the character GIF to the left of the map */
+#character-container {
+    position: absolute;
+    top: 20%;           /* Align the character vertically at the center */
+    left: -200px;         /* Move the character to the left of the map */
+    transform: translateY(-50%); /* Center the character vertically */
+    z-index: 1000;      /* Ensure the GIF stays on top */
+}
+
+/* Style for the character GIF */
+#character-gif {
+    width: 250px;       /* Adjust the size of the GIF */
+    height: auto;       /* Maintain aspect ratio */
+    object-fit: contain;/* Ensure the image doesn't stretch */
+}
+
+/* Positioning the character GIF to the left of the map */
+#character-container1 {
+    position: absolute;
+    top: 30%;           /* Align the character vertically at the center */
+    right: -580px;         /* Move the character to the left of the map */
+    transform: translateY(-50%); /* Center the character vertically */
+    z-index: 1000;      /* Ensure the GIF stays on top */
+}
+
+/* Style for the character GIF */
+#character-gif1 {
+    width: 800px;       /* Adjust the size of the GIF */
+    height: auto;       /* Maintain aspect ratio */
+    object-fit: contain;/* Ensure the image doesn't stretch */
+}
+
+/* Positioning the character GIF to the left of the map */
+#character-container2 {
+    position: absolute;
+    top: 1.5%;           /* Align the character vertically at the center */
+    right: -250px;         /* Move the character to the left of the map */
+    transform: translateY(-50%); /* Center the character vertically */
+    z-index: 1000;      /* Ensure the GIF stays on top */
+}
+
+/* Style for the character GIF */
+#character-gif2 {
+    width: 150px;       /* Adjust the size of the GIF */
+    height: auto;       /* Maintain aspect ratio */
+    object-fit: contain;/* Ensure the image doesn't stretch */
+}
