@@ -142,69 +142,93 @@ const resetButton = document.getElementById('reset-btn');
 
 // Initial zoom scale and pan values
 let zoomScale = 1;
-let panX = 0, panY = 0; // Initial pan offset values
+let panX = 0, panY = 0; // Current pan offset values
 let isDragging = false; // To track if the user is currently dragging
-let dragX, startY; // Start mouse position for dragging
+let startX = 0, startY = 0; // Mouse starting positions
+let dragX = 0, dragY = 0;   // Amount dragged during movement
 
-// Zoom In function
+// Sensitivity factor for panning
+const panSensitivity = 1;
+
+// Zoom In
 zoomInButton.addEventListener('click', () => {
-    zoomScale -= 0.1; // Increase zoom by 10%
-    setZoom(zoomScale); // Update the viewBox with new zoom level
+    zoomScale -= 0.1;
+    setZoom(zoomScale);
 });
 
-// Zoom Out function
+// Zoom Out
 zoomOutButton.addEventListener('click', () => {
-    zoomScale += 0.1; // Decrease zoom by 10%
-    setZoom(zoomScale); // Update the viewBox with new zoom level
+    zoomScale += 0.1;
+    setZoom(zoomScale);
 });
 
 // Set the zoom level by adjusting the viewBox of the SVG
 function setZoom(scale) {
-    // Set min and max zoom scale limits
-    if (scale < 0.5) scale = 0.5; // Prevent zooming out too much
-    if (scale > 3) scale = 3; // Prevent zooming in too much
+    if (scale < 0.5) scale = 0.5;
+    if (scale > 3) scale = 3;
 
-    const width = 1000 * scale;  // New width based on zoom scale
-    const height = 684 * scale;  // New height based on zoom scale
+    const width = 1000 * scale;  // SVG original width
+    const height = 684 * scale;  // SVG original height
 
-    // Adjust the viewBox of the SVG to zoom in/out (panX and panY are kept intact)
     svg.setAttribute('viewBox', `${panX} ${panY} ${width} ${height}`);
 }
 
-// Mouse Down (start dragging)
+// Mouse down (start dragging)
 svg.addEventListener('mousedown', (e) => {
     isDragging = true;
-    startX = e.clientX; // Store initial mouse position (X)
-    startY = e.clientY; // Store initial mouse position (Y)
+    startX = e.clientX;
+    startY = e.clientY;
+    svg.style.cursor = 'grabbing';
 });
 
-// Mouse Move (dragging)
+// Mouse move (dragging)
 svg.addEventListener('mousemove', (e) => {
     if (isDragging) {
-        const dx = e.clientX - startX; // Difference in X (horizontal movement)
-        const dy = e.clientY - startY; // Difference in Y (vertical movement)
-        panX += dx; // Update horizontal pan
-        panY += dy; // Update vertical pan
-        setZoom(zoomScale); // Update the viewBox with the new pan position
-        startX = e.clientX; // Update startX for next calculation
-        startY = e.clientY; // Update startY for next calculation
+        // Calculate drag distance
+        dragX = (startX - e.clientX) * panSensitivity;
+        dragY = (startY - e.clientY) * panSensitivity;
+
+        // Apply drag to pan
+        panX += dragX;
+        panY += dragY;
+
+        // Update viewBox
+        setZoom(zoomScale);
+
+        // Update start positions for next calculation
+        startX = e.clientX;
+        startY = e.clientY;
     }
 });
 
-// Mouse Up (end dragging)
+// Mouse up (stop dragging)
 svg.addEventListener('mouseup', () => {
     isDragging = false;
+    svg.style.cursor = 'grab';
 });
 
-// Mouse Out (end dragging if mouse leaves the map)
-svg.addEventListener('mouseout', () => {
+// Mouse leave (stop dragging if mouse leaves)
+svg.addEventListener('mouseleave', () => {
     isDragging = false;
+    svg.style.cursor = 'grab';
 });
 
-// Reset function to return the map to its default position
+// Reset map
 resetButton.addEventListener('click', () => {
-    zoomScale = 1; // Reset zoom scale
-    panX = 0; // Reset panX
-    panY = 0; // Reset panY
-    setZoom(zoomScale); // Update the viewBox to reset the map
+    zoomScale = 1;
+    panX = 0;
+    panY = 0;
+    dragX = 0;
+    dragY = 0;
+    setZoom(zoomScale);
+});
+// Scroll wheel zoom
+svg.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+        zoomScale -= 0.1; // Zoom in
+    } else {
+        zoomScale += 0.1; // Zoom out
+    }
+    setZoom(zoomScale);
 });
