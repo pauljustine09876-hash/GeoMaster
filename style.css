@@ -149,6 +149,7 @@ svg path:hover {
 
 
 /* Flags & Organizations Section */
+/* General section styling */
 section {
   margin: 40px 0;
   text-align: center;
@@ -160,6 +161,7 @@ section h2 {
   color: #2f1c6b;
 }
 
+/* Container for flags and organizations */
 .flags, .orgs {
   display: flex;
   flex-wrap: wrap;
@@ -167,6 +169,7 @@ section h2 {
   gap: 20px;
 }
 
+/* Card styling */
 .card {
   width: 150px;
   background: white;
@@ -174,14 +177,46 @@ section h2 {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 15px;
   text-align: center;
+  cursor: pointer;  /* Make the card clickable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 }
 
+
+
+.card:hover {
+  transform: scale(1.05); /* Slightly scale the card on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow for hover effect */
+}
+
+/* Card image styling */
 .card img {
   width: 100%;
   border-radius: 6px;
 }
 
+/* Card text styling */
 .card p {
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+/*Card*/
+.card1 {
+  width: 300px;
+  height: 180px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.card1 img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.card1 p {
   font-size: 0.9em;
   margin-top: 8px;
 }
@@ -403,7 +438,7 @@ svg {
 /* Positioning the character GIF to the left of the map */
 #character-container {
     position: absolute;
-    top: 30%;           /* Align the character vertically at the center */
+    top: 25%;           /* Align the character vertically at the center */
     left: -200px;         /* Move the character to the left of the map */
     transform: translateY(-50%); /* Center the character vertically */
     z-index: 1000;      /* Ensure the GIF stays on top */
@@ -419,15 +454,15 @@ svg {
 /* Positioning the character GIF to the left of the map */
 #character-container1 {
     position: absolute;
-    top: 40%;           /* Align the character vertically at the center */
-    right: -450px;         /* Move the character to the left of the map */
+    top: 32.5%;           /* Align the character vertically at the center */
+    right: -290px;         /* Move the character to the left of the map */
     transform: translateY(-50%); /* Center the character vertically */
     z-index: 1000;      /* Ensure the GIF stays on top */
 }
 
 /* Style for the character GIF */
 #character-gif1 {
-    width: 700px;       /* Adjust the size of the GIF */
+    width: 380px;       /* Adjust the size of the GIF */
     height: auto;       /* Maintain aspect ratio */
     object-fit: contain;/* Ensure the image doesn't stretch */
 }

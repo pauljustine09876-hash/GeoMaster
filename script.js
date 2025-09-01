@@ -8,6 +8,81 @@ document.getElementById('CH').addEventListener('click', () => {
   window.location.href = 'tips2/switzerland.html';  // Albania URL
 });
 
+document.getElementById('NO').addEventListener('click', () => {
+  window.location.href = 'tips1/norway.html';  // Albania URL
+});
+
+document.getElementById('SE').addEventListener('click', () => {
+  window.location.href = 'tips3/sweden.html';  // Albania URL
+});
+
+document.getElementById('FR').addEventListener('click', () => {
+  window.location.href = 'tips4/france.html';  // Albania URL
+});
+
+document.getElementById('DE').addEventListener('click', () => {
+  window.location.href = 'tips5/germany.html';  // Albania URL
+});
+
+document.getElementById('ES').addEventListener('click', () => {
+  window.location.href = 'tips6/spain.html';  // Albania URL
+});
+
+document.getElementById('GB').addEventListener('click', () => {
+  window.location.href = 'tips7/uk.html';  // Albania URL
+});
+
+document.getElementById('PL').addEventListener('click', () => {
+  window.location.href = 'tips8/poland.html';  // Albania URL
+});
+
+document.getElementById('IT').addEventListener('click', () => {
+  window.location.href = 'tips9/italy.html';  // Albania URL
+});
+
+//Flags
+// Event listener for the Albania card
+// Redirect when the Albania card is clicked
+document.getElementById('al').addEventListener('click', () => {
+  window.location.href = 'tips/albania.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('fr').addEventListener('click', () => {
+  window.location.href = 'tips4/france.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('de').addEventListener('click', () => {
+  window.location.href = 'tips5/germany.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('it').addEventListener('click', () => {
+  window.location.href = 'tips9/italy.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('no').addEventListener('click', () => {
+  window.location.href = 'tips1/norway.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('pl').addEventListener('click', () => {
+  window.location.href = 'tips8/poland.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('es').addEventListener('click', () => {
+  window.location.href = 'tips6/spain.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('se').addEventListener('click', () => {
+  window.location.href = 'tips3/sweden.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('ch').addEventListener('click', () => {
+  window.location.href = 'tips2/switzerland.html';  // Replace with the actual link for Albania
+});
+
+document.getElementById('gb').addEventListener('click', () => {
+  window.location.href = 'tips7/uk.html';  // Replace with the actual link for Albania
+});
+
 // Tooltip for map
 const svgPath = document.querySelectorAll('svg path');  // Get all paths (countries) in the SVG
 const toggle = document.getElementById('toggle');  // Tooltip container
