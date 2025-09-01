@@ -40,9 +40,7 @@ document.getElementById('IT').addEventListener('click', () => {
   window.location.href = 'tips9/italy.html';  // Albania URL
 });
 
-document.getElementById('FI').addEventListener('click', () => {
-  window.location.href = 'tips10/finland.html';  // Albania URL
-});
+
 
 //Flags
 // Event listener for the Albania card
