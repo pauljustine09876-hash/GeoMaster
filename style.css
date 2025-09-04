@@ -28,25 +28,25 @@ h1{
   font-family: 'Poppins', sans-serif;  /* Apply the Roboto font to both text and icon */
   font-size: 2.4em;                     /* Adjust the font size */
   font-weight: 700;  
-  color: #90d5ff;                     /* Set the font color */
+  color: #ffffff;                     /* Set the font color */
   margin-bottom: 20px;                /* Add space below the heading */
 }
 
 /* SVG Map */
 svg path {
-  fill: #8d85ff;
+  fill: #7be495;
   transition: .2s ease-in-out;
   cursor: pointer;
 }
 
 svg path:hover {
-  fill: #5125d2;
+  fill: #ffffff;
 }
 
 /* Tooltip */
 .toggle {
   position: absolute;  /* Position the tooltip relative to the document */
-  background: #2f1c6b;
+  background: #367ac7;
   color: #fff;
   padding: 4px 15px;
   border-radius: 4px;
@@ -70,7 +70,7 @@ section {
 
 section h2 {
   margin-bottom: 20px;
-  color: #2f1c6b;
+  color: #ffffff;
 }
 
 /* Container for flags and organizations */
@@ -97,7 +97,7 @@ section h2 {
 
 .card:hover {
   transform: scale(1.05); /* Slightly scale the card on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow for hover effect */
+  box-shadow: 0 8px 12px rgb(0, 0, 0); /* Increase shadow for hover effect */
 }
 
 /* Card image styling */
@@ -185,7 +185,7 @@ section h2 {
 .available-countries h3 {
   font-size: 1.4em;
   margin-bottom: 15px;
-  color: #2f1c6b;
+  color: #ffffff;
 }
 
 .country-badges {
@@ -196,18 +196,18 @@ section h2 {
 }
 
 .country-badges .badge {
-  background: #f3f4f6;
+  background: #90d5ff;
   border-radius: 20px;
   padding: 8px 15px;
   font-size: 14px;
-  color: #333;
-  border: 1px solid #ddd;
+  color: #000000;
+  border: 1px solid #90d5ff;
 }
 
 .coming-soon {
   margin-top: 12px;
   font-size: 13px;
-  color: #777;
+  color: #ffffff;
 }
 
 
@@ -221,13 +221,13 @@ header {
 header h1 {
     font-size: 2.6em;
     font-weight: 700;
-    color: #1664a6;
+    color: #ffffff;
     margin: 0 0 15px;
 }
 
 header p {
     font-size: 1.1em;
-    color: #555;
+    color: #ffffff;
     margin: 0 auto 30px;
     max-width: 800px;
     line-height: 1.5;
@@ -242,13 +242,13 @@ header .europe {
 
 header .europe h2 {
     font-size: 2em;
-    color: #1664a6;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 header .europe p {
     font-size: 1.2em;
-    color: #333;
+    color: #ffffff;
     margin: 0;
 }
 
@@ -300,14 +300,14 @@ button {
     padding: 10px;
     font-size: 18px;     /* Bigger font size for the + and - buttons */
     cursor: pointer;    /* Make the button clickable */
-    background-color: #2f1c6b; /* Button background */
-    color: white;        /* Text color */
+    background-color: #ffffff; /* Button background */
+    color: rgb(0, 0, 0);        /* Text color */
     border: none;        /* Remove default border */
     border-radius: 5px;  /* Rounded corners */
 }
 
 button:hover {
-    background-color: #5125d2; /* Change background color on hover */
+    background-color: #d7d4e0fe; /* Change background color on hover */
 }
 
 /* Smooth Transition for Zooming */
@@ -318,8 +318,8 @@ svg {
 /* Reset Button Styling */
 #reset-btn {
     padding: 10px;
-    background-color: #2f1c6b;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -344,56 +344,9 @@ svg {
 
 /* Reset Button Hover Effect */
 #reset-btn:hover {
-    background-color: #5125d2;  
+    background-color: #d7d4e0fe;  
 }
 
-/* Positioning the character GIF to the left of the map */
-#character-container {
-    position: absolute;
-    top: 25%;           /* Align the character vertically at the center */
-    left: -200px;         /* Move the character to the left of the map */
-    transform: translateY(-50%); /* Center the character vertically */
-    z-index: 1000;      /* Ensure the GIF stays on top */
-}
-
-/* Style for the character GIF */
-#character-gif {
-    width: 200px;       /* Adjust the size of the GIF */
-    height: auto;       /* Maintain aspect ratio */
-    object-fit: contain;/* Ensure the image doesn't stretch */
-}
-
-/* Positioning the character GIF to the left of the map */
-#character-container1 {
-    position: absolute;
-    top: 41.5%;           /* Align the character vertically at the center */
-    right: -250px;         /* Move the character to the left of the map */
-    transform: translateY(-50%); /* Center the character vertically */
-    z-index: 1000;      /* Ensure the GIF stays on top */
-}
-
-/* Style for the character GIF */
-#character-gif1 {
-    width: 300px;       /* Adjust the size of the GIF */
-    height: auto;       /* Maintain aspect ratio */
-    object-fit: contain;/* Ensure the image doesn't stretch */
-}
-
-/* Positioning the character GIF to the left of the map */
-#character-container2 {
-    position: absolute;
-    top: 13.7%;           /* Align the character vertically at the center */
-    right: -180px;         /* Move the character to the left of the map */
-    transform: translateY(-50%); /* Center the character vertically */
-    z-index: 1000;      /* Ensure the GIF stays on top */
-}
-
-/* Style for the character GIF */
-#character-gif2 {
-    width: 150px;       /* Adjust the size of the GIF */
-    height: auto;       /* Maintain aspect ratio */
-    object-fit: contain;/* Ensure the image doesn't stretch */
-}
 
 #footer {
     height: 10vh;  /* Set the height of the footer */
