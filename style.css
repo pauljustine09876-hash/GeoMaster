@@ -71,6 +71,10 @@ section {
 section h2 {
   margin-bottom: 20px;
   color: #ffffff;
+  font-size: 2em;
+  font-family: 'Greycliff CF', sans-serif;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4); /* Glowing effect */
+  transition: text-shadow 0.3s ease; /* Smooth transition for glowing effect */
 }
 
 /* Container for flags and organizations */
@@ -219,18 +223,23 @@ header {
 }
 
 header h1 {
-    font-size: 2.6em;
+    font-size: 4em;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 15px;
+    font-family: 'Greycliff CF', sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4); /* Glowing effect */
+    transition: text-shadow 0.3s ease; /* Smooth transition for glowing effect */
+    
 }
 
 header p {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: #ffffff;
     margin: 0 auto 30px;
     max-width: 800px;
     line-height: 1.5;
+    font-family: "montserrat", ui-sans-serif;
 }
 
 /* Europe subsection inside header */
@@ -241,15 +250,19 @@ header .europe {
 }
 
 header .europe h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #ffffff;
     margin-bottom: 10px;
+    font-family: 'Greycliff CF', sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4); /* Glowing effect */
+    transition: text-shadow 0.3s ease; /* Smooth transition for glowing effect */
 }
 
 header .europe p {
     font-size: 1.2em;
     color: #ffffff;
     margin: 0;
+    font-family: "montserrat", ui-sans-serif;
 }
 
 /* Tags container */
@@ -356,4 +369,57 @@ svg {
     font-size: 1.5em;    /* Make the text a bit bigger */
     padding: 20px 0;     /* Adds some space above and below the text */
     color: white;        /* Set text color to white */
+}
+
+/* Floating Home Button Styles */
+.home-button {
+    position: fixed; /* This will position the button relative to the viewport */
+    top: 20px; /* Distance from the top of the viewport */
+    left: 20px; /* Distance from the left of the viewport */
+    background-color: #90d5ff; /* Blue background color */
+    color: rgb(0, 0, 0); /* Text color */
+    padding: 10px 20px; /* Padding around the button */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    z-index: 1000; /* Ensure the button is always on top */
+    transition: all 0.3s ease; /* Smooth transition for the whole button */
+}
+
+/* Hover effect for the home button */
+.home-button:hover {
+    background-color: #1b2dd6; /* Darker blue on hover */
+    padding: 20px 30px; /* Increase padding to expand the button */
+    transform: scale(1.2); /* Slightly enlarge the button */
+}
+
+/* Floating Button Styles */
+.floating-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px; /* Add some padding around the icon */
+  transition: all 0.3s ease; /* Smooth transition for the whole button */
+}
+
+/* Icon inside the button */
+.home-icon {
+  width: 50px; /* Initial size of the icon */
+  height: 50px;
+  transition: transform 0.3s ease; /* Ensure smooth scaling */
+}
+
+/* Hover effect for the floating button */
+.floating-button:hover {
+  transform: scale(1.2); /* Enlarge the button on hover */
+}
+
+/* Keep the icon size the same during hover */
+.floating-button:hover .home-icon {
+  transform: scale(1); /* Keep the icon size normal even when button expands */
 }

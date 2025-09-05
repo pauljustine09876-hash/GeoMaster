@@ -36,6 +36,7 @@
     z-index: 9;
 }
 
+
 #nav {
     height: 150px;
     width: 100%;
@@ -46,10 +47,19 @@
     position: fixed;
     justify-content: flex-start;
     z-index: 999;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold; /* Optional, to make the text stand out more */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4); /* Glowing effect */
+    transition: text-shadow 0.3s ease; /* Smooth transition for glowing effect */
 }
 
 #nav img {
     height: 95px;
+    cursor: default; 
 }
 
 #nav h4 {
@@ -87,6 +97,7 @@ video {
     font-weight: 900;
     margin-top: 80px;
     position: relative;
+    font-family: 'Greycliff CF', sans-serif;
 }
 
 #page1 h1::before {
@@ -100,19 +111,21 @@ video {
 }
 
 #page1 h2 {
-    font-size: 30px;
+    font-size: 33px;
     font-weight: 800;
     color: #90d5ff;
     margin-top: 10px;
     margin-bottom: 30px;
+    font-family: 'Greycliff CF', sans-serif;
 }
 
 #page1 p {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 35px;
     color: #ffffff;
     width: 50%;
+    font-family: 'Greycliff CF', sans-serif;
 }
 
 #page2 {
@@ -185,6 +198,8 @@ video {
     width: 220px;
     border-radius: 10px;
     object-fit: cover;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4); /* Glowing effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition for glowing effect */
 }
 
 #about-us-in {
@@ -196,6 +211,9 @@ video {
     font-size: 60px;
     font-weight: 800;
     margin-bottom: 20px;
+    font-weight: bold; /* Optional, to make the text stand out more */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4); /* Glowing effect */
+    transition: text-shadow 0.3s ease; /* Smooth transition for glowing effect */
 }
 
 #about-us-in p {
@@ -267,6 +285,10 @@ video {
 .overlay p {
     color: black;
     line-height: 30px;
+    .bold-text {
+    font-weight: bold;
+    color: black;
+}
 }
 
 .card:hover .overlay {
@@ -288,7 +310,7 @@ video {
     font-weight: 800;
     width: 57%;
     line-height: 40px;
-    text-align: justify;
+    text-align:center;
     text-transform: uppercase;
 }
 
@@ -299,12 +321,12 @@ video {
 
 #page3 #colon1 {
     left: 15%;
-    top: 25%;
+    top: 30%;
 
 }
 
 #page3 #colon2 {
-    bottom: 25%;
+    bottom: 30%;
     right: 16%;
 
 }
@@ -353,7 +375,7 @@ video {
 }
 
 .elem:hover h2 {
-    color: white;
+     color: rgba(255, 255, 255, 0.5); /* White text with 70% opacity */
     background-color: transparent;
 }
 
@@ -368,6 +390,9 @@ video {
     font-weight: 900;
     color: black;
     -webkit-text-stroke: 2px #ffffff;
+    font-family: 'Greycliff CF', sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4); /* Glowing effect */
+    transition: text-shadow 0.3s ease; /* Smooth transition for glowing effect */
 }
 
 #explore {

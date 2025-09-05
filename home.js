@@ -23,7 +23,7 @@ h4all.forEach(function (elem) {
 });
 
 gsap.to("#nav", {
-    backgroundColor: "#000",
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
     duration: 0.5,
     height: "90px",
     scrollTrigger: {
@@ -117,8 +117,8 @@ const discoverElement = document.getElementById('discover');
 
 // Add event listener to handle the click
 discoverElement.addEventListener('click', () => {
-    // Redirect to GeoGuessr's website
-    window.location.href = 'https://www.geoguessr.com/';
+    // Open GeoGuessr's website in a new tab
+    window.open('https://www.geoguessr.com/', '_blank');
 });
 
 // Get the element by ID
@@ -126,7 +126,52 @@ const liveElement = document.getElementById('live');
 
 // Add event listener to handle the click
 liveElement.addEventListener('click', () => {
-    // Redirect to GeoGuessr's website
-    window.location.href = 'https://geo-master-plum.vercel.app/';
+    // Open the GeoMaster website in a new tab
+    window.open('https://geo-master-plum.vercel.app/', '_blank');
 });
+
+
+
+// JavaScript to enable smooth scrolling
+document.getElementById('discoverLink').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    document.getElementById('page4').scrollIntoView({
+        behavior: 'smooth' // Enables smooth scrolling
+    });
+});
+
+// JavaScript to enable smooth scrolling
+document.getElementById('missionlink').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    document.getElementById('page3').scrollIntoView({
+        behavior: 'smooth' // Enables smooth scrolling
+    });
+});
+
+// JavaScript to enable smooth scrolling
+document.getElementById('page2').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    document.getElementById('page2').scrollIntoView({
+        behavior: 'smooth' // Enables smooth scrolling
+    });
+});
+
+// JavaScript to enable smooth scrolling
+document.getElementById('#about-us-in-name').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    document.getElementById('#about-us-in-name').scrollIntoView({
+        behavior: 'smooth' // Enables smooth scrolling
+    });
+});
+
+// JavaScript to enable smooth scrolling
+document.getElementById('#page1').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    document.getElementById('#page1').scrollIntoView({
+        behavior: 'smooth' // Enables smooth scrolling
+    });
+});
+
+
+
 

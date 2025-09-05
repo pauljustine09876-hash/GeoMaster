@@ -224,6 +224,7 @@ resetButton.addEventListener('click', () => {
     dragY = 0;
     setZoom(zoomScale);
 });
+
 // Scroll wheel zoom
 svg.addEventListener('wheel', (e) => {
     e.preventDefault();
@@ -234,3 +235,8 @@ svg.addEventListener('wheel', (e) => {
     }
     setZoom(zoomScale);
 });
+
+// Function to redirect to the index.html page (Homepage)
+function goHome() {
+  window.location.href = 'index.html'; // Change 'index.html' to the path of your homepage
+}
