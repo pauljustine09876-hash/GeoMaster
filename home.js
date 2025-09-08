@@ -127,7 +127,7 @@ const liveElement = document.getElementById('live');
 // Add event listener to handle the click
 liveElement.addEventListener('click', () => {
     // Open the GeoMaster website in a new tab
-    window.open('https://geo-master-plum.vercel.app/', '_blank');
+    window.open('https://geo-master-liart.vercel.app/', '_blank');
 });
 
 
