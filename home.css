@@ -416,3 +416,25 @@ video {
     padding: 20px 0;     /* Adds some space above and below the text */
     color: white;        /* Set text color to white */
 }
+
+/* Desktop (default) */
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
