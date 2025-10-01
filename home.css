@@ -417,3 +417,231 @@ video {
     color: white;        /* Set text color to white */
 }
 
+
+
+
+
+
+/* ------------------ MEDIA QUERIES FOR PHONES ------------------ */
+@media (max-width: 768px) {
+
+    /* Global adjustments */
+    * {
+        font-size: 14px;
+    }
+
+    #nav {
+        height: 80px;
+        padding: 0 15px;
+        gap: 10px;
+        align-items: center; 
+    }
+
+    #nav img {
+        height: 60px;
+    }
+
+    #nav h4 {
+        font-size: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Page 1 adjustments */
+    #page1 h1 {
+        font-size: 36px;
+        margin-top: 60px;
+        line-height: 40px;
+    }
+
+    #page1 h1::before {
+        -webkit-text-stroke: 1px #90d5ff;
+    }
+
+    #page1 h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    #page1 p {
+        width: 90%;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    /* Page 2: Scroller */
+    /* ------------------ MEDIA QUERIES FOR PHONES ------------------ */
+@media (max-width: 768px) {
+
+    /* Page 2: Scroller adjustments for phone */
+    #scroller {
+        white-space: nowrap;
+        overflow: auto;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+    }
+
+    #scroller-in {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scroll 6s linear infinite; /* keep scrolling */
+    }
+
+    #scroller h4 {
+        display: inline-block;
+        font-size: 2rem;   /* smaller text for phones */
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: montserrat, sans-serif;
+        margin-right: 30px; /* space between words */
+        color: black;
+        -webkit-text-stroke: 1px #90d5ff;
+
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+    /* About Us section */
+    #about-us {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    #about-us img {
+        height: 150px;
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    #about-us-in {
+        width: 100%;
+    }
+
+    #about-us-in h3 {
+        font-size: 28px;
+    }
+
+    #about-us-in p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    /* Cards section (Info cards) */
+    #cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        height: 400px;
+    }
+
+    .overlay {
+        padding-top: 60px;
+    }
+
+    .overlay h4 {
+        font-size: 18px;
+    }
+
+    .overlay p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    /* Page 3 */
+    #page3 {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    #page3 > p {
+        width: 90%;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    #page3 img {
+        height: 20px;
+    }
+
+      #page3 #colon1 {
+        left: 5%;   /* adjust as needed */
+        top: 10%;    /* adjust as needed */
+    }
+
+    #page3 #colon2 {
+        bottom: 15%; /* adjust as needed */
+        right: 10%;  /* adjust as needed */
+    }
+
+    /* Page 4 (Boxes) */
+    #page4 {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .elem {
+        width: 100%;
+        height: 180px;
+    }
+
+    .elem h2 {
+        font-size: 20px;
+    }
+
+  #page4 h1 {
+    font-size: 24px;      /* smaller on phone */
+    text-align: center;   /* center horizontally */
+    width: 100%;          /* full width */
+    line-height: 1.3;
+    margin-bottom: 20px;  /* space before buttons */
+    position: relative;   /* reset positioning */
+    top: 0;               /* make sure it doesn’t overlap */
+}
+    /* CTA Buttons Section (Learn / Play / Try) */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        padding: 0 10px;
+        margin-top: 10px;
+    }
+
+    .cta-buttons button {
+        width: 90%;          /* fit phone screen */
+        max-width: 300px;    /* not too wide */
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    /* Footer */
+    #footer {
+        font-size: 14px;
+        padding: 10px 0;
+        height: auto;  
+    }
+}

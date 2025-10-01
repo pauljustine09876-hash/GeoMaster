@@ -175,3 +175,35 @@ document.getElementById('#page1').addEventListener('click', function(e) {
 
 
 
+
+
+
+
+
+
+// --- Your existing code here ---
+
+// Auto detect screen size
+function detectScreenSize() {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    console.log("Screen width: " + width + "px, Screen height: " + height + "px");
+
+    if (width <= 770) {
+        console.log("📱 Mobile/Small screen detected");
+    } else if (width <= 1024) {
+        console.log("💻 Tablet detected");
+    } else {
+        console.log("🖥️ Desktop detected");
+    }
+}
+
+// Run on page load
+detectScreenSize();
+
+// Run when window is resized
+window.addEventListener("resize", detectScreenSize);
+
+
+
