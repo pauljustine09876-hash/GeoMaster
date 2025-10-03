@@ -240,3 +240,148 @@ svg.addEventListener('wheel', (e) => {
 function goHome() {
   window.location.href = 'index.html'; // Change 'index.html' to the path of your homepage
 }
+
+
+// ✅ Reuse your existing svg instead of redeclaring
+const svgMap = document.querySelector("#map-container svg");
+
+// ✅ Use unique variable names so they don’t conflict
+let isPanningMap = false;
+let startPanX, startPanY;
+let mapViewBox = svgMap.viewBox.baseVal;
+
+// ✅ Set default viewBox if missing
+if (!mapViewBox || mapViewBox.width === 0) {
+  svgMap.setAttribute("viewBox", `0 0 ${svgMap.clientWidth} ${svgMap.clientHeight}`);
+  mapViewBox = svgMap.viewBox.baseVal;
+}
+
+// ✅ Pan with mouse
+svgMap.addEventListener("mousedown", (e) => {
+  isPanningMap = true;
+  startPanX = e.clientX;
+  startPanY = e.clientY;
+});
+svgMap.addEventListener("mousemove", (e) => {
+  if (!isPanningMap) return;
+  let dx = startPanX - e.clientX;
+  let dy = startPanY - e.clientY;
+  mapViewBox.x += dx;
+  mapViewBox.y += dy;
+  startPanX = e.clientX;
+  startPanY = e.clientY;
+});
+svgMap.addEventListener("mouseup", () => (isPanningMap = false));
+svgMap.addEventListener("mouseleave", () => (isPanningMap = false));
+
+// ✅ Pan with touch
+svgMap.addEventListener("touchstart", (e) => {
+  if (e.touches.length === 1) {
+    isPanningMap = true;
+    startPanX = e.touches[0].clientX;
+    startPanY = e.touches[0].clientY;
+  }
+});
+svgMap.addEventListener("touchmove", (e) => {
+  if (isPanningMap && e.touches.length === 1) {
+    let dx = startPanX - e.touches[0].clientX;
+    let dy = startPanY - e.touches[0].clientY;
+    mapViewBox.x += dx;
+    mapViewBox.y += dy;
+    startPanX = e.touches[0].clientX;
+    startPanY = e.touches[0].clientY;
+  }
+});
+
+// ✅ Touch pinch zoom
+let lastPinchDist = null;
+svgMap.addEventListener("touchmove", (e) => {
+  if (e.touches.length === 2) {
+    let dx = e.touches[0].clientX - e.touches[1].clientX;
+    let dy = e.touches[0].clientY - e.touches[1].clientY;
+    let dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (lastPinchDist) {
+      let scale = lastPinchDist / dist;
+      mapViewBox.width *= scale;
+      mapViewBox.height *= scale;
+    }
+    lastPinchDist = dist;
+  }
+});
+svgMap.addEventListener("touchend", () => {
+  isPanningMap = false;
+  lastPinchDist = null;
+});
+
+// ✅ Mouse scroll zoom
+svgMap.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  let scale = e.deltaY > 0 ? 1.1 : 0.9;
+  mapViewBox.width *= scale;
+  mapViewBox.height *= scale;
+});
+
+// ✅ Zoom in/out buttons
+document.getElementById("zoom-in")?.addEventListener("click", () => {
+  mapViewBox.width *= 0.9;
+  mapViewBox.height *= 0.9;
+});
+document.getElementById("zoom-out")?.addEventListener("click", () => {
+  mapViewBox.width *= 1.1;
+  mapViewBox.height *= 1.1;
+});
+
+// ✅ Save the original viewBox when page loads
+const originalViewBox = {
+  x: mapViewBox.x,
+  y: mapViewBox.y,
+  width: mapViewBox.width,
+  height: mapViewBox.height
+};
+
+// ✅ Reset button
+document.getElementById("reset-btn")?.addEventListener("click", () => {
+  mapViewBox.x = originalViewBox.x;
+  mapViewBox.y = originalViewBox.y;
+  mapViewBox.width = originalViewBox.width;
+  mapViewBox.height = originalViewBox.height;
+
+  svgMap.setAttribute(
+    "viewBox",
+    `${mapViewBox.x} ${mapViewBox.y} ${mapViewBox.width} ${mapViewBox.height}`
+  );
+});
+
+// ✅ Select tooltip
+const tooltip = document.querySelector(".toggle");
+
+// ✅ For each country/path on the map
+document.querySelectorAll("svg path").forEach((region) => {
+  // Show tooltip on mouse hold
+  region.addEventListener("mousedown", (e) => {
+    tooltip.style.display = "block";
+    tooltip.innerText = region.getAttribute("name") || "Unknown"; // use region name if set
+    tooltip.style.left = e.pageX + 10 + "px";
+    tooltip.style.top = e.pageY + 10 + "px";
+  });
+
+  // Hide tooltip on mouse release
+  region.addEventListener("mouseup", () => {
+    tooltip.style.display = "none";
+  });
+
+  // Show tooltip on touch hold
+  region.addEventListener("touchstart", (e) => {
+    const touch = e.touches[0];
+    tooltip.style.display = "block";
+    tooltip.innerText = region.getAttribute("name") || "Unknown";
+    tooltip.style.left = touch.pageX + 10 + "px";
+    tooltip.style.top = touch.pageY + 10 + "px";
+  });
+
+  // Hide tooltip on touch release
+  region.addEventListener("touchend", () => {
+    tooltip.style.display = "none";
+  });
+});

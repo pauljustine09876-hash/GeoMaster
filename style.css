@@ -423,3 +423,147 @@ svg {
 .floating-button:hover .home-icon {
   transform: scale(1); /* Keep the icon size normal even when button expands */
 }
+
+
+
+
+@media (max-width: 768px) {
+
+  /* Make map smaller */
+  #map-container {
+    width: 90%;      /* shrink container to fit screen */
+    margin: 0 auto;  /* center on screen */
+  }
+
+  #map-container svg {
+    width: 100%;     /* make map scale down with container */
+    height: auto;    /* keep aspect ratio */
+    max-height: 300px; /* limit height so it’s not too tall */
+  }
+
+  /* Adjust zoom/reset buttons so they stay close to map */
+  #zoom-controls {
+    bottom: 80px;
+    right: 10px;
+  }
+
+  #reset-btn {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  /* Title */
+  h1 {
+    font-size: 1.8em; /* smaller title */
+    margin-bottom: 15px;
+  }
+
+  /* Section headings */
+  section h2 {
+    font-size: 1.5em;
+  }
+
+  /* Cards */
+  .card {
+    width: 120px;
+    padding: 10px;
+  }
+
+  .card1 {
+    width: 90%;
+    height: auto;
+  }
+
+  /* Info cards */
+  .info-cards {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;      /* center cards horizontally */
+    gap: 20px;                /* space between cards */
+    width: 100%;
+  }
+
+  .info-cards .card {
+    width: 90%;               /* make each card smaller */
+    max-width: 350px;         /* limit so it doesn’t stretch too wide */
+  }
+  
+  /* Flags & Orgs */
+  .flags, .orgs {
+    gap: 12px;
+  }
+
+  .card p, .card1 p, .info-cards p {
+    font-size: 12px;
+  }
+
+  /* Available countries */
+  .country-badges .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .available-countries h3 {
+    font-size: 1.2em;
+  }
+
+  /* Header */
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1em;
+    max-width: 90%;
+  }
+
+header .europe h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+header .europe p {
+  font-size: 1em;
+  text-align: center;
+}
+
+
+  /* Info tags */
+  .info-tags {
+    gap: 10px;
+  }
+
+  .info-tags .tag {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  
+
+  /* Footer */
+  #footer {
+    font-size: 0.9em;
+    padding: 10px 0;
+    height: auto;
+  }
+
+  /* Home button */
+  .home-button {
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .floating-button {
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+  }
+
+  .home-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+}
