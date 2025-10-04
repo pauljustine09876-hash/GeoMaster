@@ -127,7 +127,7 @@ const liveElement = document.getElementById('live');
 // Add event listener to handle the click
 liveElement.addEventListener('click', () => {
     // Open the GeoMaster website in a new tab
-    window.open('https://geo-master-liart.vercel.app/', '_blank');
+    window.open('https://geo-master-u4uj.vercel.app/?fbclid=IwY2xjawNN-RtleHRuA2FlbQIxMABicmlkETF6eFpoN0JJcnd5S3NoT3lxAR7XThINB5h9Kk1jF4gb541wcLy5U9aFbIr2FNN9GfE9ZOoOx5LNkwmcT-LkQQ_aem_6KDaNXH0FR06M83NmQximg', '_blank');
 });
 
 
